@@ -5,7 +5,7 @@ upper = 100
 
 magic_number = random.randint(lower, upper)
 
-print(f'Guess a number between {lower} and {upper}')
+print('Guess a number between %d and %d' % (lower, upper))
 
 number_of_guesses = 0
 while True:
