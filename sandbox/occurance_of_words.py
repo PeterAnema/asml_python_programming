@@ -22,7 +22,8 @@ for word in unique_words:
     d[word] = n
 
 for word, n in sorted(d.items()):
-    print('%-25s: %3d' % (word, n))
+    # print(word, n)
+    # print('%-25s: %3d' % (word, n))
     # print(f'{word:<25}: {n:3}')
     # or
-    # print('%-15s: %3d %s' % (word, n, '*'*n))
+    print('%-15s: %3d %s' % (word, n, '*' * n))
