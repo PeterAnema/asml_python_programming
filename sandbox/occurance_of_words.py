@@ -21,7 +21,10 @@ for word in unique_words:
     n = words.count(word)
     d[word] = n
 
-for word, n in sorted(d.items()):
+def get_values(item):
+    return item[1]
+
+for word, n in sorted(d.items(), key=get_values, reverse=True):
     # print(word, n)
     # print('%-25s: %3d' % (word, n))
     # print(f'{word:<25}: {n:3}')
