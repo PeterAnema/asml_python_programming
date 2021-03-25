@@ -1,9 +1,13 @@
 import urllib.request
 import json
 
-url = 'http://api.openweathermap.org/data/2.5/weather?q=eindhoven&appid=d1526a9039658a6f76950cff21823aff&units=metric'
+city = 'New york'
+
+url = 'http://api.openweathermap.org/data/2.5/weather?q=%s&appid=d1526a9039658a6f76950cff21823aff&units=metric' % city
 
 with urllib.request.urlopen(url) as f:
-    print(f.read())
+    data = json.load(f)
 
-    print('The temperature is ')
+    temperature = data['main']['temp']
+
+    print('The temperature in %s is %f' % (city, temperature))
