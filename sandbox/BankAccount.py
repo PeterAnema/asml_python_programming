@@ -53,6 +53,16 @@ class BankAccount:
         cls.valuta = valuta
 
 
+class SavingsAccount(BankAccount):
+
+    def __init__(self, number, holder, bank = 'unknown', interest = 0.0):
+        super().__init__(number, holder, bank)
+        self._interest = interest
+
+    def add_interest(self):
+        self._balance += self.balance * self._interest / 100
+
+
 # ------------------------------------------------------------
 
 BankAccount.set_valuta('$')
@@ -76,3 +86,11 @@ acc2.withdraw(80)
 acc2.withdraw(2)
 
 acc2.get_info()
+
+
+acc3 = SavingsAccount('NL54ABCD0976766574', 'Diana', interest = 5)
+
+acc3.deposit(1000)
+acc3.add_interest()
+
+acc3.get_info()

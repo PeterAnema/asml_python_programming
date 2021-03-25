@@ -4,7 +4,9 @@ import turtle
 
 
 class Vector(object):
-    """A vector class"""
+    """A vector class
+    You can manipulate vectors, add vectors and compare vectors with this class.
+    """
 
     __slots__ = ['_x', '_y']
 
@@ -71,6 +73,7 @@ class Vector(object):
         return self.length()
 
     def angle(self):
+        """Determine the angle of a vector"""
         return math.atan(self._y / self._x)
 
     def turtle(self):
