@@ -1,26 +1,29 @@
 import random
 
 required_length = 8
-n_lowercase = 1
-n_uppercase = 1
+n_lowercase = 2
+n_uppercase = 2
 n_numbers = 1
 n_special = 1
 
-lowercase = 'abcdefghijklmnopqrstuvwxyz'
-uppercase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
-numbers = '0123456789'
-special = '@#$%&*+?!'
+lowercase_characters = 'abcdefghijklmnopqrstuvwxyz'
+uppercase_characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+number_characters = '0123456789'
+special_characters = '@#$%&*+?!'
 
-characters = []
-characters += random.choices(lowercase, k=n_lowercase)
-characters += random.choices(uppercase, k=n_uppercase)
-characters += random.choices(numbers, k=n_numbers)
-characters += random.choices(special, k=n_special)
-characters += random.choices(lowercase + uppercase + numbers,
-                             k = required_length - n_lowercase - n_uppercase - n_numbers - n_special)
+lower = random.choices(lowercase_characters, k=n_lowercase)
+upper = random.choices(uppercase_characters, k=n_uppercase)
+numbers = random.choices(number_characters, k=n_numbers)
+special = random.choices(special_characters, k=n_special)
+extra = random.choices(lowercase_characters +
+                       uppercase_characters +
+                       number_characters +
+                       special_characters,
+                       k = required_length - n_lowercase - n_uppercase - n_numbers - n_special)
 
-random.shuffle(characters)
+all = lower + upper + numbers + special + extra
+random.shuffle(all)
 
-password = ''.join(characters)
+password = ''.join(all)
 
 print('New password: ', password)
