@@ -21,5 +21,5 @@ while True:
         print('higher ...')
 
     elif guess == magic_number:
-        print(f'YEAAAH! You guessed it in {number_of_guesses} guesses')
+        print(f'YEAAAH!!!! You guessed it in {number_of_guesses} guesses')
         break
