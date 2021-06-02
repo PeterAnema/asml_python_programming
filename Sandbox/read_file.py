@@ -1,4 +1,3 @@
-
 filename = 'ca-500.csv'
 
 with open(filename, 'r') as f:
