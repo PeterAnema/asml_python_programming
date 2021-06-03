@@ -7,6 +7,15 @@ class BankAccount:
         self.__balance = 0
         self.__currency = currency
 
+    def __str__(self):
+        return 'Account %s of %s has a balance of %s%d' % (self.__account_number,
+                                                          self.__account_holder,
+                                                          self.__currency,
+                                                          self.__balance)
+
+    def __repr__(self):
+        return f"BankAccount('{self.__account_number}, '{self.__account_holder}')"
+
     def deposit(self, amount):
         self.__balance += amount
 
@@ -29,3 +38,5 @@ acc1.withdraw(100)
 acc1.withdraw(23)
 
 acc1.info()
+
+print(acc1)
